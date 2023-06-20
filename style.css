@@ -1,5 +1,5 @@
 :root {
-  --primary: #b6895b;
+  --primary: #85592d;
   --bg: #010101;
 }
 
@@ -192,11 +192,15 @@ body {
   display: flex;
   align-items: center;
   /* text terbentuk secara vertikal, klo horizontal pk justify content */
-  background-image: url("kimboo.jpg");
+  background-image: url("kim.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   position: relative;
+  -webkit-mask: url(kim.jpg);
+  mask-image: linear-gradient(rgba(0, 0, 0, 1) 85%, rgba (0, 0, 0, 0));
+  -webkit-mask-image: linear-gradient(rgba(0, 0, 0, 1) 85%, rgba (0, 0, 0, 0));
+  /* terbalik, yg ada warna nya jd transparant  */
 }
 
 .hero::after {
@@ -215,16 +219,31 @@ body {
   );
 }
 
+.hero .mask-container {
+  position: absolute;
+  /* background: salmon; */
+  inset: 0;
+  -webkit-mask: url(kim.jpg);
+  -webkit-mask-image: url(IMG_1114.svg);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+  -webkit-mask-position: center;
+}
+
 /* Content tulisan ke tengah sedikit, tdk terlalu menyamping */
 .hero .content {
   padding: 1.4rem 7%;
-  max-width: 60rem;
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  top: 300px;
+  /* max-width: 60rem; */
 }
 
 .hero .content h1 {
   font-size: 5em;
   color: #fff;
-  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.795);
   line-height: 1.2;
 }
 
@@ -647,6 +666,10 @@ footer .credit a:hover {
   .navbar .search-form {
     width: 90%;
     right: 2rem;
+  }
+
+  .hero .content {
+    top: 100px;
   }
 
   .about .row {
