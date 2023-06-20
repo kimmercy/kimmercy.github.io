@@ -317,16 +317,14 @@ body {
 
 /* Product Section */
 .products .row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 5rem;
-  justify-content: center;
-  align-items: normal;
-  text-align: center;
-  padding-bottom: 5rem;
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+ gap: 1.5rem;
+ margin-top: 4rem;
 }
 
 .products .product-card {
+  text-align: center;
   border: 1px solid #666;
   padding: 2rem;
 }
