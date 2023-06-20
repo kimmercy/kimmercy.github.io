@@ -4,8 +4,9 @@ const navbarNav = document.querySelector(".navbar-nav");
 // cari element yg nama kelas nya navbar-nav
 
 // ketika tab-menu di klik
-document.querySelector("#tab-menu").onclick = () => {
+document.querySelector("#tab-menu").onclick = (e) => {
   navbarNav.classList.toggle("active");
+  e.preventDefault();
 };
 
 // Toggle class active untuk Search form
@@ -22,7 +23,7 @@ document.querySelector('#search-button').onclick = (e) => {
 const tab = document.querySelector("#tab-menu");
 const sb= document.querySelector('#search-button');
 
-// jika Makita click di luar tab menu dan di luar Navbar
+// jika kita click di luar tab menu dan di luar Navbar
 // e.target means target maus di klik, tab menu ilang
 document.addEventListener("click", function (e) {
   if (!tab.contains(e.target) && !navbarNav.contains(e.target)) {
